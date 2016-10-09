@@ -2,7 +2,7 @@
 
 [![Travis](https://img.shields.io/travis/vutran/dext-emoji-plugin/develop.svg?maxAge=2592000&style=flat-square)](https://travis-ci.org/vutran/dext-emoji-plugin) [![Coveralls branch](https://img.shields.io/coveralls/vutran/dext-emoji-plugin/develop.svg?maxAge=2592000&style=flat-square)](https://coveralls.io/github/vutran/dext-emoji-plugin) [![license](https://img.shields.io/github/license/vutran/dext-emoji-plugin.svg?maxAge=2592000&style=flat-square)](LICENSE)
 
-> [Dext](https://github.com/vutran/dext) plugin to search for emojis via the GitHub API.
+> [Dext](https://github.com/vutran/dext) plugin to search for emojis.
 
 ![](screenshot.png?raw=true)
 
