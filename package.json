@@ -10,6 +10,9 @@
     "smiley"
   ],
   "main": "index.js",
+  "files": [
+    "index.js"
+  ],
   "scripts": {
     "lint": "eslint __mocks__ __tests__ index.js",
     "test": "jest --coverage"
