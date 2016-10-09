@@ -21,7 +21,7 @@ In Dext, type `emojis`, then your query.
 ## Related
 
 - [dext](https://github.com/vutran/dext) - The Dext smart launcher
-- [dext-github-plugin](https://github.com/vutran/dext-github-plugin) - Dext plugin to search for Github repositories
+- [dango](https://github.com/vutran/dango) - Search for emojis 🍕😋😍🐷
 - [dext-default-theme](https://github.com/vutran/dext-default-theme) - The default theme for Dext
 
 ## License
