@@ -20,7 +20,7 @@
   "author": "Vu Tran <vu@vu-tran.com>",
   "license": "MIT",
   "dependencies": {
-    "got": "^6.5.0"
+    "dango": "^0.1.0"
   },
   "devDependencies": {
     "babel-jest": "^16.0.0",
@@ -30,7 +30,7 @@
     "coveralls": "^2.11.14",
     "eslint": "^3.7.1",
     "eslint-config-airbnb-base": "^8.0.0",
-    "eslint-plugin-import": "^2.0.0",
+    "eslint-plugin-import": "^1.16.0",
     "jest": "^16.0.1"
   }
 }

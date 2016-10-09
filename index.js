@@ -1,56 +1,40 @@
-const got = require('got');
-
-const ENDPOINT = 'https://api.github.com/emojis';
+const dango = require('dango');
 
 /**
- * Maps the emoji item to a Dext item
+ * Maps the dango emoji item to a Dext item
  *
- * @param {String} url
- * @param {String} name
+ * @param {Object} item
  * @return {Object}
  */
-const mapItems = (url, name) => Object.assign({}, {
-  title: name,
+const mapItems = item => Object.assign({}, {
+  title: '',
   subtitle: '',
-  arg: url,
+  arg: item.text,
   icon: {
-    path: url,
+    type: 'text',
+    letter: item.text,
+    bgColor: 'transparent',
   },
   text: {
-    copy: `:${name}:`,
+    copy: item.text,
   },
-});
-
-/**
- * Fetches the items
- *
- * @return {Promise}
- */
-const fetchItems = () => new Promise((resolve) => {
-  got(ENDPOINT, { json: true })
-    .then((response) => {
-      const items = Object.keys(response.body).map(
-        key => mapItems(response.body[key.toString()], key.toString())
-      );
-      resolve(items);
-    })
-    .catch(() => {
-      resolve([]);
-    });
 });
 
 module.exports = {
   keyword: 'emoji',
   helper: {
     title: 'Search for emojis',
+    icon: {
+      path: './icon.png',
+    },
   },
   query: q => new Promise((resolve) => {
-    fetchItems()
-      .then((items) => {
-        // fuzzy filter
-        resolve({
-          items: items.filter(i => new RegExp(`${q}`, 'i').test(i.title)),
-        });
-      });
+    let items = [];
+    dango(q)
+      .then((dangoItems) => {
+        items = dangoItems.map(mapItems);
+        resolve({ items });
+      })
+      .catch(() => resolve({ items }));
   }),
 };

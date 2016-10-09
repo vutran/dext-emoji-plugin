@@ -2,11 +2,11 @@ let mockData = null;
 let mockReject = false;
 
 /**
- * Mocks the `got()`` function
+ * Mocks the `got()` function
  */
 const got = () => new Promise((resolve, reject) => {
   if (mockReject) {
-    reject();
+    reject(mockReject);
     return;
   }
   resolve({ body: mockData });
@@ -14,8 +14,6 @@ const got = () => new Promise((resolve, reject) => {
 
 /**
  * Set fake data for the list endpoint
- *
- * Example: https://api.github.com/emojis
  *
  * @param {Object} data
  */
@@ -26,8 +24,6 @@ got.__setFakeData = (data) => {
 
 /**
  * Make the got() return a rejected Promise
- *
- * Example: https://api.github.com/emojis
  *
  * @param {Object} data
  */
