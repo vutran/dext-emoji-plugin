@@ -24,6 +24,24 @@ In Dext, type `emojis`, then your query.
 - [dango](https://github.com/vutran/dango) - Search for emojis 🍕😋😍🐷
 - [dext-default-theme](https://github.com/vutran/dext-default-theme) - The default theme for Dext
 
+## Contributing
+
+1. Clone to repository.
+2. Install dependencies
+
+  **With `npm`:**
+
+    ```
+    $ npm install
+    ```
+
+  **With [`yarn`](https://github.com/yarnpkg/yarn):**
+
+    ```
+    $ yarn
+    ```
+3. Run tests: `npm t`
+
 ## License
 
 MIT © [Vu Tran](https://github.com/vutran/)
