@@ -24,7 +24,7 @@ describe('dext-emoji-plugin', () => {
       results: [],
     });
 
-    const results = await m.query('bar');
+    const results = await m.query('ranch');
     expect(results.items.length).toBe(0);
   });
 
@@ -32,7 +32,7 @@ describe('dext-emoji-plugin', () => {
     // eslint-disable-next-line global-require, no-underscore-dangle
     require('got').__setReject(true);
 
-    const results = await m.query('bar');
+    const results = await m.query('ranch');
     expect(results.items.length).toBe(0);
   });
 });

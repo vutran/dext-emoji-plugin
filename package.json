@@ -28,7 +28,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "dango": "^0.1.0"
+    "emojilib": "^2.2.9"
   },
   "devDependencies": {
     "babel-jest": "^16.0.0",
