@@ -31,15 +31,12 @@ In Dext, type `emojis`, then your query.
 
   **With `npm`:**
 
-    ```
     $ npm install
-    ```
 
   **With [`yarn`](https://github.com/yarnpkg/yarn):**
 
-    ```
     $ yarn
-    ```
+
 3. Run tests: `npm t`
 
 ## License
