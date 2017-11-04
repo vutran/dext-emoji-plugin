@@ -1,4 +1,4 @@
-const emojilib = require('emojilib');
+const emojilib = require("emojilib");
 
 /**
  * Maps the dango emoji item to a Dext item
@@ -6,26 +6,30 @@ const emojilib = require('emojilib');
  * @param {Object} item
  * @return {Object}
  */
-const mapItems = item => Object.assign({}, {
-  title: '',
-  subtitle: '',
-  arg: item.char,
-  icon: {
-    type: 'text',
-    letter: item.char,
-    bgColor: 'transparent',
-  },
-  text: {
-    copy: item.char,
-  },
-});
+const mapItems = item =>
+  Object.assign(
+    {},
+    {
+      title: "",
+      subtitle: "",
+      arg: item.char,
+      icon: {
+        type: "text",
+        letter: item.char,
+        bgColor: "transparent"
+      },
+      text: {
+        copy: item.char
+      }
+    }
+  );
 
 // Check object from search list for a match
-const matchesQuery =
-  (query, emojiObj) => emojiObj.name === query || emojiObj.keywords.includes(query);
+const matchesQuery = (query, emojiObj) =>
+  emojiObj.name === query || emojiObj.keywords.includes(query);
 // Build an easier to handle search list: [{ name: 'pizza', keywords: ['food', ...] }, { ... }]
-const buildSearchList =
-  (keys, emojiMap) => keys.map(key => ({ name: key, keywords: emojiMap[key].keywords }));
+const buildSearchList = (keys, emojiMap) =>
+  keys.map(key => ({ name: key, keywords: emojiMap[key].keywords }));
 // Returns all found results matching the query
 const getMatchingEmojis = (query, orderedKeys, emojiMap) => {
   const searchList = buildSearchList(orderedKeys, emojiMap);
@@ -38,15 +42,16 @@ const getMatchingEmojis = (query, orderedKeys, emojiMap) => {
 };
 
 module.exports = {
-  keyword: 'emoji',
+  keyword: "emoji",
   helper: {
-    title: 'Search for emojis',
+    title: "Search for emojis",
     icon: {
-      path: './icon.png',
-    },
+      path: "./icon.png"
+    }
   },
-  query: q => new Promise((resolve) => {
-    const results = getMatchingEmojis(q, emojilib.ordered, emojilib.lib);
-    resolve({ items: results.map(mapItems) });
-  }),
+  query: q =>
+    new Promise(resolve => {
+      const results = getMatchingEmojis(q, emojilib.ordered, emojilib.lib);
+      resolve({ items: results.map(mapItems) });
+    })
 };
